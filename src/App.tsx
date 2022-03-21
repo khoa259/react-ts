@@ -34,18 +34,12 @@ function App() {
 
         </Route>
 
-
-        <Route path='/admin' element={<AdminLayout/>}> 
-            <Route path='products' element={<ProductManager products={products} />} />
-
-
-        </Route>
-        
-        {/* <Route path="admin" element={<AdminLayout/>}>
-          <Route index element={<Navigate to='dashboard'/>}/>
-          <Route path="dashboard" element={<h1>Dashboard page</h1>} />
+        {/* admin */}
+        <Route path="admin" element={<AdminLayout/>}>
+          <Route index element={<Navigate to='products'/>}/>
+          {/* <Route path="dashboard" element={<h1>Dashboard page</h1>} /> */}
           <Route path= "products" element={<ProductManager products={products} />} />
-        </Route> */}
+        </Route>
       </Routes>
     </div>
   )
