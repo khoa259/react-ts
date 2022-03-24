@@ -2,11 +2,11 @@ import React from 'react'
 import { ProductType } from './types/product'
 
 type ProductManagerProp ={
-    products: ProductType[]
-    //onRemove: (id: number)=> void
+    products: ProductType[],
+    onRemove: (id: string)=> void
 }
 
-const ProductManager = ({products}: ProductManagerProp) => {
+const ProductManager = ({products ,onRemove}: ProductManagerProp) => {
   return (
     <table className="table">
   <thead>
@@ -24,7 +24,7 @@ const ProductManager = ({products}: ProductManagerProp) => {
               <td>{item.name}</td>
               <td>{item.price}</td>
               <td>
-                  <button className="btn btn-danger" >Remove</button>
+                  <button className="btn btn-danger" onClick={() => onRemove(item._id)} >Remove</button>
               </td>
           </tr>
       )}
