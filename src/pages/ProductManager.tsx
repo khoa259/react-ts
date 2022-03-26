@@ -8,6 +8,8 @@ type ProductManagerProp ={
 
 const ProductManager = ({products ,onRemove}: ProductManagerProp) => {
   return (
+    <div>
+    <a href='products/add'>add product</a>
     <table className="table">
   <thead>
     <tr>
@@ -30,6 +32,8 @@ const ProductManager = ({products ,onRemove}: ProductManagerProp) => {
       )}
   </tbody>
 </table>
+</div>
+
 
   )
 }
