@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { useForm, SubmitHandler  } from 'react-hook-form'
 import {useNavigate , useParams} from 'react-router-dom'
-import { read } from '../api/products'
-import { ProductType } from './types/product'
+import { read } from '../../api/products'
+import { ProductType } from '../types/product'
  
 type ProductEditProps = {
     onUpdate:( products:ProductType) => void

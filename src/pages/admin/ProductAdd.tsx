@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useForm, SubmitHandler  } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { ProductType } from './types/product'
+import { ProductType } from '../types/product'
 
 type ProductAddProps = {
     onAdd:(product:ProductType)=> void

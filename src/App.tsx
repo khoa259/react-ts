@@ -6,10 +6,10 @@ import WebsiteLayout from './pages/layouts/WebsiteLayout'
 import AdminLayout from './pages/layouts/AdminLayout'
 import { useEffect, useState } from 'react'
 import { ProductType } from './pages/types/product'
-import ProductManager from './pages/ProductManager'
+import ProductManager from './pages/admin/ProductManager'
 import { add, list, onRemove, update } from './api/products'
-import ProductAdd from './pages/ProductAdd'
-import ProductEdit from './pages/ProductEdit'
+import ProductAdd from './pages/admin/ProductAdd'
+import ProductEdit from './pages/admin/ProductEdit'
 
 
 
