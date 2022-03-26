@@ -31,7 +31,7 @@ function App() {
   }
 
 
-  const onHanldeAdd = (data) => {
+  const onHanldeAdd = (data:any) => {
     add(data);
     setProducts([...products,data])
   }
