@@ -6,7 +6,7 @@ export const list = () => {
     return instance.get(url);
 }
 
-export const onRemove = (id:string) =>{
+export const onRemove = (id:number) =>{
     const url = `/products/${id}`
     return instance.delete(url)
 }
@@ -16,12 +16,12 @@ export const add = (product:ProductType) => {
     return instance.post(url, product)
 }
 
-export const read = (id:string) => {
+export const read = (id:number) => {
     const url = `/products/${id}`
     return instance.get(url)
 }
 
 export const update = (product:ProductType) => {
-    const url = `/products/${product._id}`
+    const url = `/products/${product.id}`
     return instance.put(url, product)
 }

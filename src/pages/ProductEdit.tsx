@@ -38,7 +38,7 @@ const ProductEdit = (props: ProductEditProps) => {
         <form action="" onSubmit={handleSubmit(onSubmit)}>
             <input type="text" {...register('name',{required:true})} placeholder='name'/>
             { errors.name && <span color='red'>Fields is required</span>}<br/>
-            <input type="number"  placeholder='number'/><br/>
+            <input type="number"{...register('price',{required:true})}  placeholder='number'/><br/>
             <button>update</button>
         </form>
 
