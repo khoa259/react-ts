@@ -4,11 +4,11 @@ import { useNavigate } from 'react-router-dom'
 import { ProductType } from './types/product'
 
 type ProductAddProps = {
-    onAdd:(products:ProductType)=> void
+    onAdd:(product:ProductType)=> void
 }
 type FormInputs ={
     name:string
-    price:Number
+    price:number
 }
 const ProductAdd = (props: ProductAddProps) => {
     const {register, handleSubmit, formState} = useForm<FormInputs>()

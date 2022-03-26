@@ -7,8 +7,9 @@ import AdminLayout from './pages/layouts/AdminLayout'
 import { useEffect, useState } from 'react'
 import { ProductType } from './pages/types/product'
 import ProductManager from './pages/ProductManager'
-import { add, list, onRemove } from './api/products'
+import { add, list, onRemove, update } from './api/products'
 import ProductAdd from './pages/ProductAdd'
+import ProductEdit from './pages/ProductEdit'
 
 
 
@@ -26,15 +27,19 @@ function App() {
   const removeItem = (id:string) => {
     onRemove(id);
     setProducts(products.filter(item => item._id !== id))
-    console.log(id);
-    
   }
 
-
-  const onHanldeAdd = (data:any) => {
+  const onHandleAdd = (data:any) => {
     add(data);
     setProducts([...products,data])
   }
+
+  const onHandleUpdate = async (product: ProductType) => {
+    const { data } = await update(product);
+    // reRender
+    setProducts(products.map(item => item._id === data._id ? data : item ));
+  }
+
 
   return (
     <div className="container">
@@ -50,10 +55,12 @@ function App() {
 
         {/* admin */}
         <Route path="admin" element={<AdminLayout/>}>
-          <Route index element={<Navigate to='products'/>}/>
-          <Route path= "products" element={<ProductManager products={products} onRemove={removeItem} />} />
-          <Route path='products/add' element={<ProductAdd onAdd={onHanldeAdd} />} />
-        </Route>
+          <Route path="products">
+            <Route index element={<ProductManager products={products} onRemove={removeItem}/>} />
+              <Route path="add" element={<ProductAdd onAdd={onHandleAdd}/>}/>
+              <Route path=":id/edit" element={<ProductEdit onUpdate={onHandleUpdate}/>}/>
+            </Route>
+          </Route>
       </Routes>
     </div>
   )
