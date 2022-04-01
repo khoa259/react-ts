@@ -17,11 +17,15 @@ const Navbar = () => {
           <li className="nav-item">
             <NavLink className="nav-link active" aria-current="page" to="products">Product</NavLink>
           </li>
-          <li className="nav-item">
-            <NavLink className="nav-link active" aria-current="page" to="#">About</NavLink>
-          </li>
+         
           <li className="nav-item">
             <NavLink className="nav-link active" aria-current="page" to="admin">Admin</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link active" aria-current="page" to="signup">Signup</NavLink>
+          </li>
+          <li className="nav-item">
+            <NavLink className="nav-link active" aria-current="page" to="signin">Signin</NavLink>
           </li>
         </ul>
        <Search />

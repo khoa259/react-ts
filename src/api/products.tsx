@@ -1,5 +1,5 @@
 import { ProductType } from "../pages/types/product";
-import instance from "./intance";
+import instance from "./instance";
 
 export const list = () => {
     const url = `/products`;

@@ -10,7 +10,9 @@ import ProductManager from './pages/admin/ProductManager'
 import { add, list, onRemove, update } from './api/products'
 import ProductAdd from './pages/admin/ProductAdd'
 import ProductEdit from './pages/admin/ProductEdit'
-
+import Signin from './pages/Signin'
+import Signup from './pages/Signup'
+import PrivateRouter from './components/PrivateRouter'
 
 
 function App() {
@@ -50,11 +52,12 @@ function App() {
               <Route index element={<h1>Product Page</h1>} />
               <Route path=':id' element={<h1>Product Detail</h1>}/>
           </Route>
-
+          <Route path='signup' element={<Signup/>} />
+          <Route path='signin' element={<Signin/>}/>
         </Route>
 
         {/* admin */}
-        <Route path="admin" element={<AdminLayout/>}>
+        <Route path="admin" element={<PrivateRouter><AdminLayout/></PrivateRouter>}>
           <Route path="products">
             <Route index element={<ProductManager products={products} onRemove={removeItem}/>} />
               <Route path="add" element={<ProductAdd onAdd={onHandleAdd}/>}/>
