@@ -36,7 +36,7 @@ const Signin = () => {
                     <input type="password" {...register('password',{required:true})} className="form-control" id="inputPassword" />
                 </div>
             </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">Gửi</button>
         </form>
     </div>
 
