@@ -6,7 +6,7 @@ import Navbar from '../../components/Navbar'
 const WebsiteLayout = () => {
   return (
     <div>
-        <header>
+        <header >
             <Navbar/>
         </header>
         <main>

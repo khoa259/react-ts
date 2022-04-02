@@ -1,11 +1,13 @@
 import React from 'react'
 import Banner from '../components/Banner'
+import Navbar from '../components/Navbar'
 
 const Homepage = () => {
   return (
     <div>
-      <Banner/>
-      <h3>home page</h3>
+      {/* <div className="container">
+          
+      </div> */}
     </div>
   )
 }
