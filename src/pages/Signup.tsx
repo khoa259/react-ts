@@ -6,7 +6,7 @@ import { signup } from '../api/user'
 type FormInputs ={
     name:string
     email:string
-    password:string
+    password:string | number
 }
 
 const Signup = () => {
