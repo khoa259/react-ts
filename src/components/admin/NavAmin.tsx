@@ -5,7 +5,7 @@ type Props = {}
 const NavAmin = (props: Props) => {
   return (
     <div>
-        NavAminưqeqweq
+        NavAminưqeqweqgit 
     </div>
   )
 }
