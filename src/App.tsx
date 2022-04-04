@@ -13,6 +13,8 @@ import ProductEdit from './pages/admin/ProductEdit'
 import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 import PrivateRouter from './components/PrivateRouter'
+import ProductPage from './pages/ProductPage'
+
 
 
 function App() {
@@ -47,9 +49,9 @@ function App() {
     <div className="container">
       <Routes>
         <Route path="/" element={<WebsiteLayout/>}>
-          <Route index element={<Homepage/>}/>
+          <Route index element={<Homepage product={products}/>}/>
           <Route path="products">
-              <Route index element={<h1>Product Page</h1>} />
+              <Route index element={<ProductPage product={products}/>} />
               <Route path=':id' element={<h1>Product Detail</h1>}/>
           </Route>
           <Route path='signup' element={<Signup/>} />

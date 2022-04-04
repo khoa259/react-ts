@@ -2,6 +2,8 @@ import React from 'react'
 
 import Search from './Search'
 import { NavLink } from 'react-router-dom'
+import Cart from './Cart'
+import DropDown from './DropDown'
 
 const Navbar = () => {
   return (
@@ -32,7 +34,11 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div>
+                <div className='flex pr-20 justify-evenly w-2/6'>
                 <Search/>
+                <Cart/>
+                <DropDown/>
+                </div>
                     <div className="-mr-2 flex md:hidden">
                         <button className="text-gray-800 dark:text-white hover:text-gray-300 inline-flex items-center justify-center p-2 rounded-md focus:outline-none">
                             <svg width="20" height="20" fill="currentColor" className="h-8 w-8" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
