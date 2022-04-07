@@ -17,7 +17,7 @@ const Signin = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data:any) => {
         const {data: user} = await signin(data);
         localStorage.setItem('user', JSON.stringify(user))
-        navigate ('/')
+        navigate ('/admin')
     }
 
 
