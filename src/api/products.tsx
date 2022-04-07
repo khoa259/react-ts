@@ -6,6 +6,10 @@ export const list = () => {
     return instance.get(url);
 }
 
+export const listLimit = () => {
+    const url = `/product`;
+    return instance.get(url)
+}
 export const onRemove = (id:number) =>{
     const url = `/products/${id}`
     return instance.delete(url)
