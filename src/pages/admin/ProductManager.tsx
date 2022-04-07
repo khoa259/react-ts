@@ -1,10 +1,10 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { ProductType } from '../types/product'
 
 type ProductManagerProp = {
   products: ProductType[],
-  onRemove: (id: number) => void
+  onRemove: (id:string) => void
 }
 
 const ProductManager = ({ products, onRemove }: ProductManagerProp) => {
@@ -73,10 +73,10 @@ const ProductManager = ({ products, onRemove }: ProductManagerProp) => {
         <td className="w-52 p-2 border-r">{item.name}</td>
         <td className="w-52 p-2 border-r"><img className='mx-auto' src={item.img} width='180' alt="" /></td>
         <td className="w-48 p-2 border-r">{item.price}$</td>
-        <td className="p-2 border-r"></td>
+        <td className="p-2 border-r">{item.desc}</td>
         <td className='w-48'>
-          <a href="#" className="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin">Edit</a>
-          <button onClick={()=> onRemove(item.id)} className="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Remove</button>
+          <button className="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin"><Link to={`${item._id}/edit`}>Edit</Link></button>
+          <button onClick={()=> onRemove(item._id)} className="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Remove</button>
         </td>
       </tr>
       )}

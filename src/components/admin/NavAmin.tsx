@@ -32,7 +32,7 @@ const NavAmin = () => {
                 </NavLink>
               </li>
               <li className="mb-6">
-                <NavLink to="#">
+                <NavLink to="category">
                   <span>
                     <svg className="fill-current h-5 w-5 text-gray-300 mx-auto hover:text-green-500" viewBox="0 0 24 24">
                       <path d="M12 13H7v5h5v2H5V10h2v1h5v2M8

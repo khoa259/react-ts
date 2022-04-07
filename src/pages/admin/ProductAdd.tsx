@@ -10,6 +10,7 @@ type FormInputs = {
     name: string
     price: number
     img: string
+    desc:string
 }
 const ProductAdd = (props: ProductAddProps) => {
     const { register, handleSubmit, formState } = useForm<FormInputs>()
@@ -49,7 +50,7 @@ const ProductAdd = (props: ProductAddProps) => {
                                 Mô Tả
                             </label>
                             <div className="mt-1">
-                                <textarea id="desc-product" name="about" rows={3} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" defaultValue={""} />
+                                <textarea {...register('desc')} name="about" rows={3} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" defaultValue={""} />
                             </div>
                         </div>
                         <div>
