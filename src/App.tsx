@@ -60,7 +60,7 @@ function App() {
       setCategory(data)
     }
     getCategry()
-  })
+  }, [])
   const removeCate =  (id:string) => {
     onRemoveCate(id);
     setCategory(categories.filter(item => item._id !== id))
@@ -76,8 +76,6 @@ function App() {
             <Route index element={<ProductPage product={products} />} />
             <Route path=':id' element={<h1>Product Detail</h1>} />
           </Route>
-          <Route path='signup' element={<Signup />} />
-          <Route path='signin' element={<Signin />} />
         </Route>
 
         {/* admin */}
@@ -91,9 +89,12 @@ function App() {
           </Route>
           <Route path='category' >
             <Route index element ={<CategoryManager category={categories} onRemoveCate={removeCate}/>}/>
-
+            <Route path='add' element={<h1>add category</h1>}/>
           </Route>
         </Route>
+        
+        <Route path='signup' element={<Signup />} />
+        <Route path='signin' element={<Signin />} />
       </Routes>
     </div>
   )
