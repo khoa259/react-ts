@@ -44,12 +44,17 @@ function App() {
     setProducts(products.map(item => item.id === data.id ? data : item ));
   }
 
+  // const LimitProducts =  async (products:ProductType) => {
+  //   const {data } = await listLimit(products:)
+  //   setProducts(data.slice(0,3))
+  //}
+
 
   return (
     <div className="container">
       <Routes>
         <Route path="/" element={<WebsiteLayout/>}>
-          <Route index element={<Homepage product={products}/>}/>
+          <Route index element={<Homepage product={products.slice(0,4)} />}/>
           <Route path="products">
               <Route index element={<ProductPage product={products}/>} />
               <Route path=':id' element={<h1>Product Detail</h1>}/>
@@ -60,6 +65,8 @@ function App() {
 
         {/* admin */}
         <Route path="admin" element={<PrivateRouter><AdminLayout/></PrivateRouter>}>
+          <Route index element= {<Navigate to="dashboard"/>}/>
+          <Route path="dashboard" element={<h1>Dashboard</h1>}/>
           <Route path="products">
             <Route index element={<ProductManager products={products} onRemove={removeItem}/>} />
               <Route path="add" element={<ProductAdd onAdd={onHandleAdd}/>}/>
