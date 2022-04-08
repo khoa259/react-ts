@@ -1,6 +1,14 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 type Props = {}
+
+
+// const navigate= useNavigate()
+export const logout = () =>{
+    window.localStorage.clear()
+    window.confirm('ra đi nhanh thế')
+    window.location.href ='/'
+}
 
 const DropDown = (props: Props) => {
   return (
@@ -15,11 +23,12 @@ const DropDown = (props: Props) => {
         <ul className="block text-right text-gray-900">
           <li><Link to='signup'className="block px-4 py-2 hover:bg-gray-200">Sign up</Link></li>
           <li><Link to='signin'className="block px-4 py-2 hover:bg-gray-200">Sign in</Link></li>
-          <li><Link to='' className="block px-3 py-4 hover:bg-gray-200">Log out</Link></li>
+          <li><button onClick= {logout} className=' btn block px-4 py-2 hover:bg-gray-200'>Logout</button></li>
         </ul>
       </div>
     </div>
   )
+
 }
 
 export default DropDown
