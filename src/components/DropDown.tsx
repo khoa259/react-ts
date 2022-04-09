@@ -23,6 +23,7 @@ const DropDown = (props: Props) => {
         <ul className="block text-right text-gray-900">
           <li><Link to='signup'className="block px-4 py-2 hover:bg-gray-200">Sign up</Link></li>
           <li><Link to='signin'className="block px-4 py-2 hover:bg-gray-200">Sign in</Link></li>
+          if()
           <li><button onClick= {logout} className=' btn block px-4 py-2 hover:bg-gray-200'>Logout</button></li>
         </ul>
       </div>
