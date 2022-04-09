@@ -17,7 +17,7 @@ export const add = (product:ProductType) => {
     const url =`/products/${user._id}`
     return instance.post(url, product,{
         headers:{
-            "Authorization": `Bear ${token}`
+            "Authorization": `Bearer ${token}`
         }
     })
 

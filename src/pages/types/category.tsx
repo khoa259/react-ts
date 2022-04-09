@@ -1,4 +1,4 @@
-export type CategoryType ={
+export type CategoryType = {
     _id:string,
-    name:string
+    name:string,
 }

@@ -8,13 +8,11 @@ type PrivateRouterProps = {
 
 const PrivateRoute = (props: PrivateRouterProps) => {
    const user = isAuthenticate()
-   console.log(user);
    
    if(user){
        if(user.user.role === 0) {
            return <Navigate to={'/'}/>
         }else{
-            console.log("role", 0);
             return props.children
         }
 
