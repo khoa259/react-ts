@@ -15,7 +15,7 @@ const Signup = () => {
 
     const onSubmit:SubmitHandler<FormInputs> = (data:any) => {
         signup(data)
-        //navigate('/signin')
+        navigate('/signin')
     }
 
     

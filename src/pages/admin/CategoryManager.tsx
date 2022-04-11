@@ -49,7 +49,7 @@ const CategoryManager = ({category, onRemoveCate}: CategoryProps) => {
                             <td className="w-52 p-2 border-r">{item.name}</td>
                             <td className='w-48'>
                                 <button className="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin"><Link to={`${item._id}/edit`} >Edit</Link></button>
-                                <button onClick={()=> onRemoveCate(item._id)}   className="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Remove</button>
+                                <button onClick={()=>{if(window.confirm('bạn có chắc muốn xóa')){onRemoveCate(item._id)} }}   className="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Remove</button>
                             </td>
                         </tr>
                     )}

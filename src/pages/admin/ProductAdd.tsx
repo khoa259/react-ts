@@ -18,7 +18,7 @@ const ProductAdd = (props: ProductAddProps) => {
 
     const onSubmit: SubmitHandler<FormInputs> = (data: any) => {
         props.onAdd(data)
-        //navigate('/admin/products')
+        navigate('/admin/products')
 
     }
 
@@ -49,9 +49,9 @@ const ProductAdd = (props: ProductAddProps) => {
                             <label className="block text-sm font-medium text-gray-700">
                                 Mô Tả
                             </label>
-                            <div className="mt-1">
-                                <textarea {...register('desc')} name="about" rows={3} className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" defaultValue={""} />
-                            </div>
+                            <div className="mt-1 flex rounded-md shadow-sm">
+                                    <textarea {...register('desc', { required: true, })} className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300" placeholder="Giá sản phẩm" />
+                                </div>
                         </div>
                         <div>
                             <label className="block text-sm font-medium text-gray-700">
