@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react'
 import { ProductType } from './pages/types/product'
 import ProductManager from './pages/admin/ProductManager'
 import { add, list, onRemove, update } from './api/products'
-import { listCate, onRemoveCate } from './api/category'
+import { addCate, listCate, onRemoveCate } from './api/category'
 import ProductAdd from './pages/admin/ProductAdd'
 import ProductEdit from './pages/admin/ProductEdit'
 import Signin from './pages/Signin'
@@ -17,6 +17,7 @@ import ProductPage from './pages/ProductPage'
 import PrivateRoute from './components/PrivateRouter'
 import { CategoryType } from './pages/types/category'
 import CategoryManager from './pages/admin/CategoryManager'
+import CategoryAdd from './pages/admin/CategoryAdd'
 
 
 
@@ -66,6 +67,11 @@ function App() {
     setCategory(categories.filter(item => item._id !== id))
   }
 
+  const onHandleAddCate = (data:any)=>{
+    addCate(data);
+    setCategory([...categories, data])
+  }
+
 
   return (
     <div className="container">
@@ -89,7 +95,7 @@ function App() {
           </Route>
           <Route path='category' >
             <Route index element ={<CategoryManager category={categories} onRemoveCate={removeCate}/>}/>
-            <Route path='add' element={<h1>add category</h1>}/>
+            <Route path='add' element={<CategoryAdd onAddCate={onHandleAddCate}/>}/>
           </Route>
         </Route>
         

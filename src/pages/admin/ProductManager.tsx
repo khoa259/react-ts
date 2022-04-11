@@ -76,7 +76,7 @@ const ProductManager = ({ products, onRemove }: ProductManagerProp) => {
         <td className="p-2 border-r">{item.desc}</td>
         <td className='w-48'>
           <button className="bg-blue-500 p-2 text-white hover:shadow-lg text-xs font-thin"><Link to={`${item._id}/edit`}>Edit</Link></button>
-          <button onClick={()=> onRemove(item._id)} className="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Remove</button>
+          <button onClick= {()=> {if(window.confirm('bạn có muốn xóa ko')) {onRemove(item._id)}}} className="bg-red-500 p-2 text-white hover:shadow-lg text-xs font-thin">Remove</button>
         </td>
       </tr>
       )}

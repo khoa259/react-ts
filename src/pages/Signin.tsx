@@ -2,6 +2,7 @@ import React from 'react'
 import { useForm, SubmitHandler} from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
 import {  signin } from '../api/user'
+import { isAuthenticate} from '../utils/localstorage'
 
 type FormInputs ={
     name:string
@@ -11,11 +12,14 @@ type FormInputs ={
 
 
 const Signin = () => {
-    const { register, handleSubmit, formState} = useForm<FormInputs>();
+    const { register, handleSubmit, formState:{errors}} = useForm<FormInputs>();
     const navigate = useNavigate()
     
     const onSubmit: SubmitHandler<FormInputs> = async (data:any) => {
         const {data: user} = await signin(data);
+        if(!user.password){
+            <h1>sai mât khẩu</h1>
+        }
         localStorage.setItem('user', JSON.stringify(user))
         navigate ('/admin')
     }
@@ -28,9 +32,13 @@ const Signin = () => {
                 <img width={30} className="-mt-10" src="https://www.tailwind-kit.com/icons/rocket.svg" />
             </div>
             <form action='' onSubmit={handleSubmit(onSubmit)}>
-                <input className="p-3 border-[1px] border-slate-500 rounded-sm w-80" {...register('email',{required:true})} placeholder="E-Mail " required />
+                <input className="p-3 border-[1px] border-slate-500 rounded-sm w-80" {...register('email',{required:true})} placeholder="E-Mail " required /><br/>
+                    { (errors.email) && <span className='text-red-500'>Fields is required</span>}<br/>
+
                 <div className="flex flex-col space-y-1 py-4">
                     <input type='password' className="p-3 border-[1px] border-slate-500 rounded-sm w-80" {...register('password',{required:true})} placeholder="Password" />
+                    { errors.password && <span className='text-red-500'>Fields is required</span>}<br/>
+
                     <p className="font-bold text-[#0070ba]">Forgot password?</p>
                 </div>
                 <div className="flex flex-col space-y-5 w-full">
