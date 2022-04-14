@@ -7,6 +7,12 @@ export const list = () => {
     return instance.get(url);
 }
 
+export const get = (id:any) => {
+    const url = `/products/${id}`
+    return instance.get(url)
+}
+
+
 export const onRemove = (id:any) =>{
     const url = `/products/${id}`
     return instance.delete(url)
