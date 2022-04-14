@@ -18,6 +18,7 @@ import PrivateRoute from './components/PrivateRouter'
 import { CategoryType } from './pages/types/category'
 import CategoryManager from './pages/admin/CategoryManager'
 import CategoryAdd from './pages/admin/CategoryAdd'
+import ProductDetails from './pages/ProductDetails'
 
 
 
@@ -80,7 +81,7 @@ function App() {
           <Route index element={<Homepage product={products.slice(0, 4)} />} />
           <Route path="products">
             <Route index element={<ProductPage product={products} />} />
-            <Route path=':id' element={<h1>Product Detail</h1>} />
+            <Route path=':id' element={<ProductDetails/>} />
           </Route>
         </Route>
 

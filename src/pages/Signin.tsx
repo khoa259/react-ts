@@ -17,9 +17,6 @@ const Signin = () => {
     
     const onSubmit: SubmitHandler<FormInputs> = async (data:any) => {
         const {data: user} = await signin(data);
-        if(!user.password){
-            <h1>sai mât khẩu</h1>
-        }
         localStorage.setItem('user', JSON.stringify(user))
         navigate ('/admin')
     }

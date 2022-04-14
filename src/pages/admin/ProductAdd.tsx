@@ -5,12 +5,14 @@ import { ProductType } from '../types/product'
 
 type ProductAddProps = {
     onAdd: (product: ProductType) => void
+    
 }
 type FormInputs = {
     name: string
     price: number
     img: string
     desc:string
+    
 }
 const ProductAdd = (props: ProductAddProps) => {
     const { register, handleSubmit, formState } = useForm<FormInputs>()
