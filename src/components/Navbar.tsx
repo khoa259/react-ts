@@ -19,18 +19,18 @@ const Navbar = () => {
                     </a>
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-baseline space-x-4">
-                            <a className="text-gray-700  px-3 py-2 rounded-md text-md font-medium" href="/">
+                            <NavLink className="text-gray-700  px-3 py-2 rounded-md text-md font-medium" to="/">
                                 Trang Chủ  
-                            </a>
-                            <a className="text-gray-700  hover:text-black px-3 py-2 rounded-md text-md font-medium" href="products">
+                            </NavLink>
+                            <NavLink className="text-gray-700  hover:text-black px-3 py-2 rounded-md text-md font-medium" to="products">
                                 Sản Phẩm 
-                            </a>
-                            <a className="text-gray-700  hover:text-black px-3 py-2 rounded-md text-md font-medium" href="/#">
+                            </NavLink>
+                            <NavLink className="text-gray-700  hover:text-black px-3 py-2 rounded-md text-md font-medium" to="/categories">
                                 Danh Mục
-                            </a>
-                            <a className="text-gray-700  hover:text-black px-3 py-2 rounded-md text-md font-medium" href="/#">
+                            </NavLink>
+                            <NavLink className="text-gray-700  hover:text-black px-3 py-2 rounded-md text-md font-medium" to="/about">
                                 About
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
                 </div>

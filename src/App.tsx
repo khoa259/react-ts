@@ -81,7 +81,7 @@ function App() {
           <Route index element={<Homepage product={products.slice(0, 4)} />} />
           <Route path="products">
             <Route index element={<ProductPage product={products} />} />
-            <Route path=':id' element={<ProductDetails/>} />
+            <Route path=':id' element={<ProductDetails product={[]}/>} />
           </Route>
         </Route>
 

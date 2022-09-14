@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
 import Banner from '../components/Banner'
 import { ProductType } from './types/product'
@@ -29,13 +28,12 @@ const Homepage = ({ product }: ProductProps) => {
                   </div>
                   <div className="mt-4 flex justify-between">
                     <div>
-                      <h3 className="text-ml font-xl text-gray-700">
-                        <span aria-hidden="true" className="absolute inset-0" />
+                      <h3 className="text-ml font-semibold text-gray-700 whitespace-nowrap w-64 overflow-hidden text-ellipsis">
                         {item.name}
                       </h3>
+                      <p className="text-xl font-semibold text-red-400">{item.price}$</p>
                       <p className="mt-1 text-sm text-gray-500">Black</p>
                     </div>
-                    <p className="text-sm font-medium text-gray-900">{item.price}$</p>
                   </div>
                 </NavLink>
               </div>
